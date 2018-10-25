@@ -25,13 +25,15 @@ public class Server implements Runnable, ServerMethods
 	 * Bind socket server to ip & port
 	 * @throws IOException
 	 */
-	public Server(String name) throws IOException
+	public Server(String name, String ip, int port) throws IOException
 	{
 		ServerAttributes.threadName = name;
+		ServerAttributes.ip = ip;
+		ServerAttributes.port = port;
 		
 		loggerSetup();
 		ServerAttributes.server = new ServerSocket();
-		ServerAttributes.server.bind(new InetSocketAddress("127.0.0.1", ServerAttributes.port));
+		ServerAttributes.server.bind(new InetSocketAddress(ServerAttributes.ip, ServerAttributes.port));
 		
 		Listen();
 	}

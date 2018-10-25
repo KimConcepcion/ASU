@@ -28,7 +28,8 @@ public class ServerAttributes
 	//	Server settings:
 	static ServerSocket server;
 	static Socket connection;
-	static int port = 1700;
+	static String ip;
+	static int port;
 	static int BACKLOG = 5;
 	static String msg = null;
 	
